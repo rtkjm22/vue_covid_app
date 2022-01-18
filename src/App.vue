@@ -1,4 +1,7 @@
 <script setup>
+import { useStore } from 'vuex';
+const store = useStore();
+
 import Form from "./components/Form.vue";
 import Card from "./components/Card.vue";
 </script>
@@ -6,7 +9,6 @@ import Card from "./components/Card.vue";
 <template>
   <Form></Form>
   <Card></Card>
-  {{ $store.state.message }}
 </template>
 
 

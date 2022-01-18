@@ -1,10 +1,10 @@
-// import { createStore } from "vuex";
-// import stack from "./modules/stack"
+import { createStore } from "vuex";
+import country from "./modules/country"
 
-// const store = createStore({
-//   modules: {
-//     stack,
-//   },
-// })
+const store = createStore({
+  modules: {
+    country,
+  },
+})
 
-// export default store
+export default store

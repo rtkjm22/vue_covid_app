@@ -1,10 +1,12 @@
 <script setup>
 import { reactive, ref } from "vue";
+import { useStore } from "vuex";
 import axios from "axios";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
+const store = useStore();
 
 // const targetCountries = [
 //   'Japan',
@@ -38,7 +40,7 @@ dayjs.extend(utc);
 // ];
 
 
-const targetCountries = $store.state.targetCountries;
+const targetCountries = store.state.country.targetCountries;
 console.log(targetCountries);
 
 // const countryArr = reactive([]);
@@ -213,7 +215,7 @@ const countryArr = {
       <p><span>TotalDeaths</span> {{ item.TotalDeaths }}</p>
     </li>
   </ul>
-  <p>{{ $store.state.targetCountries[0] }}</p>
+  <p>{{ store.state.country.targetCountries[0] }}</p>
 </template>
 
 <style scoped>

@@ -1,7 +1,11 @@
-# Vue 3 + Vite
+# 世界中のコロナウイルス感染状況を表示するウェブアプリケーション
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 使用API 
+- [https://api.covid19api.com/summary](https://api.covid19api.com/summary)
 
-## Recommended IDE Setup
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+## 今後追加したい機能
+1. 国名の日本語化
+1. 国名ボタンを押すと自動でデータを表示
+1. データの並べ替え機能
+1. 検索機能

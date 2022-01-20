@@ -1,28 +1,39 @@
 <script setup>
-import { ref } from "vue";
+import { reactive } from "vue";
 import { useStore } from "vuex";
 const store = useStore();
 
-const count = ref(store.state.country.count);
+const country = reactive(store.state.country);
+const targetCountries = reactive(store.state.country.targetCountries);
+let checkedArr = reactive([]);
 
-const increment = () => {
-  store.commit('increment');
-  console.log('更新しました');
-  
+const checkedItem = (e) => {
+  let checkText = e.target.textContent;
+
+  if (!checkedArr.includes(checkText)) {
+    checkedArr.push(checkText)
+  } else {
+    const checkIndex = checkedArr.indexOf(checkText);
+    checkedArr.splice(checkIndex, 1);
+  }
+
+  store.dispatch('setSelectCountries', checkedArr);
 }
-
 </script>
 
 
 <template>
 <div class="bl_form">
-  <label><input type="checkbox" name="country" value="japan">日本</label>
+  <ul class="targetCountries_wrapper">
+    <li v-for="(item, index) in targetCountries" :key="index" class="targetCountries_item">
+      <input type="checkbox" :id="'country_'+ item" :vlaue="item">
+      <label :for="'country_' + item" @click="checkedItem">{{ item }}</label>
+    </li>
+  </ul>
 </div>
-<p>{{ count }}</p>
-<button @click="increment">increment</button>
 </template>
 
 
-<style scoped>
-
+<style lang="scss" scoped>
+@use '../assets/scss/Form';
 </style>

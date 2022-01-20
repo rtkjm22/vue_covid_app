@@ -35,5 +35,5 @@ const checkedItem = (e) => {
 
 
 <style lang="scss" scoped>
-@use '../assets/scss/Form';
+@use "../assets/scss/Form"
 </style>
